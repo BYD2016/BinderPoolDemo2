@@ -25,7 +25,8 @@ interface ISecurityCenter {
 public class SecurityCenterImpl extends ISecurityCenter.Stub {
     private static final char SECRET_CODE = 'w';
 
-    @Override public String encrypt(String content) throws RemoteException {
+    @Override
+    public String encrypt(String content) throws RemoteException {
         char[] chars = content.toCharArray();
         for (int i = 0; i < chars.length; i++) {
             chars[i] ^= SECRET_CODE;
@@ -33,7 +34,8 @@ public class SecurityCenterImpl extends ISecurityCenter.Stub {
         return new String(chars);
     }
 
-    @Override public String decrypt(String password) throws RemoteException {
+    @Override
+    public String decrypt(String password) throws RemoteException {
         return encrypt(password);
     }
 }
@@ -55,7 +57,8 @@ interface ICompute {
 
 ``` java
 public class ComputeImpl extends ICompute.Stub {
-    @Override public int add(int a, int b) throws RemoteException {
+    @Override
+    public int add(int a, int b) throws RemoteException {
         return a + b;
     }
 }

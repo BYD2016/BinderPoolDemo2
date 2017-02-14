@@ -1,6 +1,0 @@
-<application>
-  <component name="LombokSettings">
-    <option name="enableRuntimePatch" value="true" />
-    <option name="pluginVersion" value="0.14" />
-  </component>
-</application>

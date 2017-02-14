@@ -19,12 +19,21 @@ android {
     }
 }
 
+def version = [
+        supportLib : '25.1.1',
+        junit: '4.12',
+        espressoCore: '2.2.2'
+]
+
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+
+    androidTestCompile("com.android.support.test.espresso:espresso-core:${version.espressoCore}", {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.1.1'
-    testCompile 'junit:junit:4.12'
+
+    compile "com.android.support:appcompat-v7:${version.supportLib}"
+    testCompile "junit:junit:${version.junit}"
 }
+
 
